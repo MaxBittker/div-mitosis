@@ -1,0 +1,156 @@
+.block {
+  border: white 1px solid;
+  /* margin: 2px; */
+  /* padding: 10px; */
+  display: flex;
+  /* height: 100%; */
+  flex-grow: 1;
+  /* flex-wrap: wrap; */
+  /* margin-right: -1px; */
+  /* margin-bottom: -1px; */
+  border-radius: 25px;
+  line-height: 100%;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 20px;
+  /* box-sizing */
+  /* animation-name: split-down; */
+  animation-duration: 2s;
+}
+.block.vessel {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  background-image: none !important;
+  background-color: transparent !important;
+  background: transparent;
+  /* linear-gradient(to left, black, white); */
+  /* padding: 1px; */
+}
+.leaf {
+  /* margin: 1px; */
+}
+.vessel.left {
+  background-image: linear-gradient(to left, black, white);
+  flex-direction: row-reverse;
+}
+.vessel.left > .leaf:first-child {
+  animation-name: split-left;
+}
+.vessel.left > .leaf:nth-child(2) {
+  animation-name: split-right, fade-in;
+}
+
+.vessel.right > .leaf:first-child {
+  animation-name: split-right;
+}
+.vessel.right > .leaf:nth-child(2) {
+  animation-name: split-left, fade-in;
+}
+
+.vessel.up > .leaf:first-child {
+  animation-name: split-up;
+}
+.vessel.up > .leaf:nth-child(2) {
+  animation-name: split-down, fade-in;
+}
+
+.vessel.down > .leaf:first-child {
+  animation-name: split-down;
+}
+.vessel.down > .leaf:nth-child(2) {
+  animation-name: split-up, fade-in;
+}
+
+.vessel.right {
+  background-image: linear-gradient(to right, black, white);
+  flex-direction: row;
+}
+.vessel.up {
+  flex-direction: column-reverse;
+  background-image: linear-gradient(to top, black, white);
+}
+.vessel.down {
+  flex-direction: column;
+
+  background-image: linear-gradient(to bottom, black, white);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes split-down {
+  from {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  to {
+    border-radius: 25px;
+  }
+}
+@keyframes split-up {
+  from {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  to {
+    border-radius: 25px;
+  }
+}
+
+@keyframes split-left {
+  from {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  to {
+    border-radius: 25px;
+  }
+}
+
+@keyframes split-right {
+  from {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  to {
+    border-radius: 25px;
+  }
+}
+.full {
+  border-style: dotted;
+}
+.block:hover {
+  /* filter: saturation(1.1) hue-rotate(20deg); */
+  /* box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.7); */
+
+  /* border-style: dashed; */
+  /* transform: translate(1px, 0.7px); */
+}
+#root {
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  padding: 5px;
+}
+body {
+  margin: 0px;
+  background-color: lavenderblush;
+  height: calc(100% - 22px);
+  /* height: 100%; */
+  display: grid;
+}
+html {
+  height: 100%;
+}
+
+#about {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
