@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/div-mitosis/precache-manifest.b85b125958d8d10b14f24ada7f73c476.js"
+  "/div-mitosis/precache-manifest.02e02471b39eb50ad606d033fd4603da.js"
 );
 
 self.addEventListener('message', (event) => {
